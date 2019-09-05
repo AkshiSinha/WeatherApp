@@ -7,6 +7,7 @@ import { HeaderComponent } from './header/header.component';
 import { CurrentComponent } from './current/current.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { Routes, RouterModule } from '@angular/router';
+import { WeatherService } from './weather.service';
 
 const routes: Routes = [
   {
@@ -37,7 +38,7 @@ const routes: Routes = [
     RouterModule.forRoot(routes)
   ],
   exports:[RouterModule],
-  providers: [],
+  providers: [WeatherService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

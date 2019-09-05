@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { WeatherService } from '../weather.service';
+import { CurrentWeather } from '../current-weather';
 
 @Component({
   selector: 'app-current',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./current.component.scss']
 })
 export class CurrentComponent implements OnInit {
+myweather:CurrentWeather;
 
-  constructor() { }
+  constructor(private ws:WeatherService ) { }
 
   ngOnInit() {
+    this.myweather=this.ws.weatherNow();
   }
 
 }
