@@ -8,12 +8,14 @@ import { CurrentComponent } from './current/current.component';
 import { ForecastComponent } from './forecast/forecast.component';
 import { Routes, RouterModule } from '@angular/router';
 import { WeatherService } from './weather.service';
+import {ResolveLocationService}  from './resolve-location.service';
+import {NgForm} from '@angular/forms';
 
 const routes: Routes = [
   {
     path: '',
     pathMatch: 'full',
-    component: CurrentComponent
+    component: CurrentComponent,resolve:{myWeather:ResolveLocationService}
   },
   {
     path: 'forecast',
@@ -30,16 +32,18 @@ const routes: Routes = [
     AppComponent,
     HeaderComponent,
     CurrentComponent,
-    ForecastComponent
+    ForecastComponent,
+    NgForm
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+   
     RouterModule.forRoot(routes)
   ],
   exports:[RouterModule],
-  providers: [WeatherService],
+  providers: [WeatherService, ResolveLocationService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
