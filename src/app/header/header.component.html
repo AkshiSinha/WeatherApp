@@ -3,8 +3,14 @@
     <label for="toggle" class="toggle-container">
       <span class="button button-toggle"></span>
     </label> -->
-    <nav class="nav">
+    <!-- <nav class="nav">
       <a [routerLink]="['/']" class="nav-item">Current Weather</a>
       <a [routerLink]="['forecast']" class="nav-item">5 Day Forecast</a>
-    </nav>
+    </nav> -->
+
+    <ul>
+        <li><a class="active"[routerLink]="['/']" class="nav-item">Current Weather</a></li>
+        <li><a [routerLink]="['forecast']" class="nav-item">5 Day Forecast</a></li>
+       
+      </ul>
   </div>

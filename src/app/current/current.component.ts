@@ -25,7 +25,9 @@ icon;
     this.route.data.subscribe(
       (data:{myWeather:CurrentWeather})=>{
         // this.icon=data.weather[0].icon;
+        console.log(data)
         this.myWeather=data.myWeather;
+        this.myIconUrl=data.myWeather.img;
       }
    );
     // this.myweather=this.ws.weatherNow();

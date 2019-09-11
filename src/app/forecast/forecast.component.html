@@ -1,1 +1,41 @@
-<p>forecast works!</p>
+<!-- <h1 class="city">{{forecast.cityName}}</h1>
+<div class="wrapper">
+  <div class="forecast" *ngFor="let dayWeather of forecast">
+    <div class="day">
+      <h2 class="date">{{dayWeather.date | date: 'MMMMd'}}</h2>
+      <img src="http://weather.omgez911.com/icons/{{dayWeather.img}}.png">
+      <h2 class="description">{{dayWeather.description}}</h2>
+      <h3 class="tempM">{{dayWeather.temp}}&deg;</h3>
+    </div>
+  </div>
+</div>
+<form class="lookCity" [formGroup]="forecastForm" (ngSubmit)="onSubmit()">
+  <input type="text" class="cityName" formControlName="forecastCity" placeholder="Name of city">
+  <button class="btn">go</button>
+</form> -->
+<br>
+<br>
+
+<form [formGroup]="forecastForm" (ngSubmit)="onSubmit()" style="margin-left: 600px">
+    <input type="text" formControlName="forecastCity" placeholder="enter city name">
+    <button>go</button>
+</form>
+<br>
+<br>
+<div class="container" >
+    <div class="day" *ngFor="let item of cityForecast">
+        <h2>{{item.day|date:"MM/dd/yy"}}</h2>
+        <div class="icon">
+            <img src="{{myIconUrl}} " >
+            
+        </div>
+        <br>
+        <br>
+        <div class="temp" style="margin-left:0px;">
+            <h3>Max:{{item.tempMax}}&deg;</h3>
+            <h3>Min:{{item.tempMin}}&deg;</h3>
+        </div>
+
+    </div>
+    
+</div>

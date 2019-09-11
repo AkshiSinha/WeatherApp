@@ -51,5 +51,10 @@ weatherByCityname(city:string)
 
 }
 
+fiveDayforecast(city:string)
+{
+return this.httpClient.get('https://api.openweathermap.org/data/2.5/forecast?q='+city+'&appid=9ed1c67cff03f124b0250e9776881252&units=imperial')
+}
+
   constructor(private httpClient: HttpClient) { }
 }

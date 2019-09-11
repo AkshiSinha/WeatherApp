@@ -10,6 +10,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { WeatherService } from './weather.service';
 import {ResolveLocationService}  from './resolve-location.service';
 import {NgForm} from '@angular/forms';
+import {FormsModule,ReactiveFormsModule} from '@angular/forms';
 
 const routes: Routes = [
   {
@@ -33,12 +34,14 @@ const routes: Routes = [
     HeaderComponent,
     CurrentComponent,
     ForecastComponent,
-    NgForm
+   // NgForm
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    FormsModule,
    
     RouterModule.forRoot(routes)
   ],

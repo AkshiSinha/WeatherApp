@@ -1,4 +1,5 @@
-<div class="container">
+<html>
+<div class="container" style="margin-left:600px; height:300px;width:300px;">
     <h1>{{myWeather.cityName}}</h1>
     <h2>{{myWeather.temp}}&deg;</h2>
     <div class="img" >
@@ -13,7 +14,10 @@
     <input type="text" name="city" ngModel   placeholder="enter the city name">
     <button name="button">go</button>
 </form> -->
-<form>
+<form style="margin-left:600px" >
     <input type="text" placeholder="enter city name" #id1>
-    <input type="button" (click)="onSubmit(id1.value)">
+    <br>
+    <br>
+    <input type="button" (click)="onSubmit(id1.value)" style="height:20px;width:50px;" value="enter">
 </form>
+</html>
